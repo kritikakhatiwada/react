@@ -19,6 +19,7 @@ export default function App() {
        <Countries /> */}
 
       <Header />
+      {/* <Drinks /> */}
       <Routing />
     </div>
   );
