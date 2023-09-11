@@ -17,7 +17,7 @@ export default function App() {
       <About />
   <Contact />
        <Countries /> */}
-      <Drinks />
+
       <Header />
       <Routing />
     </div>
