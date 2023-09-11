@@ -1,0 +1,18 @@
+.cardWrapper{
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  border: 1px solid #ccc;
+  height: 100%;
+  border-radius: 5px;
+  padding: 6px;
+}
+.cardImage{
+align-self: center;
+width: 80px;
+height: 80px;
+}
+.infoWrapper{
+    display: grid;
+    gap: 4px;
+}
