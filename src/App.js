@@ -17,8 +17,8 @@ export default function App() {
       <About />
   <Contact />
        <Countries /> */}
-      <Drinks />
       <Header />
+      {/* <Drinks /> */}
       <Routing />
     </div>
   );
