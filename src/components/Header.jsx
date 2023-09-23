@@ -22,7 +22,7 @@ export default function Header() {
               src={getUser().image}
               alt={""}
             />
-            <div className="grid gap-1">
+            <div className="grid gap-6">
               <span className="text-[14px]">{getUser().name}</span>
               <span className="text-[12px]">{getUser().email}</span>
             </div>
