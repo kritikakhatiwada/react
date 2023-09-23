@@ -1,15 +1,15 @@
-import { getUsers } from "../apis/Users";
+import { getAllUsers } from "../apis/Users";
 import "./common.css";
 export default function Home(props) {
   const handleData = () => {
-    getUsers().then((res) => {
+    getAllUsers().then((res) => {
       console.log(res);
     });
   };
 
   return (
     <div>
-      Hello ,{props.name}
+      <span className="text-2xl text-red-400">Hello,</span>
       <button
         id="btn"
         onClick={() => {
