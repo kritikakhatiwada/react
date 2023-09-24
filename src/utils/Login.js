@@ -35,7 +35,7 @@ export function LogInWithGoogle() {
 }
 export const isUserLoggedIn = () => {
   let user = localStorage.getItem("user");
-  if (user.length > 0) {
+  if (user && user.length > 0) {
     return true;
   } else {
     return false;
@@ -44,7 +44,7 @@ export const isUserLoggedIn = () => {
 
 export const getUser = () => {
   let user = localStorage.getItem("user");
-  if (isUserLoggedIn()) {
+  if (user && isUserLoggedIn()) {
     return JSON.parse(user);
   }
 };
