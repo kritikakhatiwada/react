@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { getAllUsers, saveUser } from "../apis/Users";
 import UserForm from "./UserForm";
-import { Link } from "react";
+import { Link } from "react-router-dom/cjs/react-router-dom.min";
 
 export default function Users() {
   const [users, setUsers] = useState([]);
@@ -10,6 +10,7 @@ export default function Users() {
   const [mode, setMode] = useState("ADD");
 
   useEffect(() => {
+    document.title = "Users";
     getAllUsers(page).then((res) => {
       setUsers(res?.data);
     });
@@ -19,7 +20,11 @@ export default function Users() {
     <div className="flex flex-col gap-2 max-w-lg m-auto">
       <div className="grid grid-cols-3 gap-1">
         {users?.map((user, index) => (
-          <div className="relative text-2xl rounded-md overflow-hidden shadow-md ">
+          <Link
+            className="relative text-2xl rounded-md overflow-hidden shadow-md "
+            to={`/users/${user?.id}`}
+            key={index}
+          >
             <img width={"100%"} src={user?.avatar} alt="" />
             <div
               onClick={() => {
@@ -43,7 +48,7 @@ export default function Users() {
                 />
               </svg>
             </div>
-          </div>
+          </Link>
         ))}
       </div>
       <div className="flex gap-2 ">

@@ -23,6 +23,7 @@ export default function Countries() {
         onClick={() => {
           setCountries([]);
         }}
+        className="bg-blue-400 hover:bg-blue-800 hover:text-white rounded-full m-2 p-2"
       >
         Clear Countries
       </button>

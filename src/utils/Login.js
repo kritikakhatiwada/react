@@ -19,6 +19,7 @@ export function LogInWithGoogle() {
       };
       let newUserStr = JSON.stringify(newUser);
       localStorage.setItem("user", newUserStr);
+      window.location.href = "/";
       // IdP data available using getAdditionalUserInfo(result)
       // ...
     })

@@ -16,6 +16,7 @@ export function getDrinkById(drinkId) {
       )
       .then((res) => resolve(res?.data))
       .catch((err) => reject(err));
+    console.log("DI");
   });
 }
 
@@ -25,6 +26,7 @@ export function getDrinkCategories() {
       .get(`https://www.thecocktaildb.com/api/json/v1/1/list.php?c=list`)
       .then((res) => resolve(res?.data))
       .catch((err) => reject(err));
+    console.log("object");
   });
 }
 
@@ -51,9 +53,10 @@ export function getDrinksByFirstLetter(letter) {
   return new Promise((resolve, reject) => {
     fetch(`https://www.thecocktaildb.com/api/json/v1/1/search.php?f=${letter}`)
       .then((res) => {
-        return res.json;
+        return res.json();
       })
-      .catch((resp) => {
+      .then((resp) => {
+        console.log("here inside resp of getDrinksByFirstLetter");
         resolve(resp);
       })
       .catch((err) => {

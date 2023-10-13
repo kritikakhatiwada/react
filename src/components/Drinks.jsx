@@ -45,12 +45,14 @@ export default function Drinks() {
     "z",
   ];
   useEffect(() => {
+    document.title = "Drinks";
     getDrinkCategories().then((resp) => {
       setCategories(resp?.drinks);
     });
   }, []);
 
   useEffect(() => {
+    console.log("1");
     getDrinksByCategory(selectedCategory).then((res) => {
       setDrinks(res?.drinks);
     });
@@ -71,24 +73,7 @@ export default function Drinks() {
   };
 
   return (
-    <div className="max-w-lg m-auto my-2  flex flex-col gap-4">
-      <Search
-        onClickSearchButton={(name) => {
-          fetchDrinksByName(name);
-        }}
-      />
-      <h2>Drinks By Category</h2>
-      <div className="grid grid-cols-3 gap-2">
-        {drinks?.map((item, index) => (
-          <Link
-            to={`/drinks/${item?.idDrink}`}
-            className="cursor-pointer hover:shadow-md hover:rounded-md"
-            key={index}
-          >
-            <DrinkCard drink={item} />
-          </Link>
-        ))}
-      </div>
+    <div className="max-w-6xl m-auto my-2  flex flex-col gap-4">
       <DrinkCategories
         selectedCategory={selectedCategory}
         categories={categories}
@@ -96,23 +81,43 @@ export default function Drinks() {
           setSelectedCategory(category);
         }}
       />
+      {/* <div className="search"> */}
+      <Search
+        onClickSearchButton={(name) => {
+          fetchDrinksByName(name);
+        }}
+      />
+      {/* </div> */}
+      <h2 className="font-bold">Drinks By Category</h2>
+      <div className="grid grid-cols-5 gap-2">
+        {drinks?.map((item, index) => (
+          <Link
+            to={`/drinks/${item?.idDrink}`}
+            className="cursor-pointer hover:shadow-md hover:rounded-md "
+            key={index}
+          >
+            <DrinkCard drink={item} />
+          </Link>
+        ))}
+      </div>
+
+      <h2 className="font-bold">Drinks By Letter</h2>
       <div className="flex gap-5 flex-wrap justify-center items-center">
         {letters?.map((item) => (
           <div
             onClick={() => {
               setSelectedLetter(item);
             }}
-            className={`uppercase cursor-pointer hover:text-blue-200 ${
-              selectedLetter === item ? "text-blue-400 text-2xl" : "text-lg"
+            className={`uppercase cursor-pointer hover:text-red-600 ${
+              selectedLetter === item ? "text-red-500 text-3xl" : "text-lg"
             }`}
           >
             {item}
           </div>
         ))}
       </div>
-      <h2>Drinks By Letter</h2>
 
-      <div className="grid grid-cols-3 gap-2">
+      <div className="grid grid-cols-5 gap-2">
         {drinksByFirstLetter?.map((item, index) => (
           <Link
             to={`/drinks/${item?.idDrink}`}

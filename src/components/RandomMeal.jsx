@@ -1,15 +1,15 @@
 import React from "react";
-import { getRandomDrink } from "../apis/drink";
-import DrinkDetail from "./DrinkDetail";
+import { getRandomMeal } from "../apis/meal";
+import MealDetail from "./MealDetail";
 
-export default function RandomDrink() {
-  const [randomDrink, setRandomDrink] = React.useState({});
+export default function RandomMeal() {
+  const [RandomMeal, setRandomMeal] = React.useState({});
   const [fetching, setFetching] = React.useState(true);
   React.useEffect(() => {
-    document.title = "Random Drinks";
-    getRandomDrink().then((res) => {
+    document.title = "Random Meals";
+    getRandomMeal().then((res) => {
       setFetching(false);
-      setRandomDrink(res?.drinks?.[0]);
+      setRandomMeal(res?.meals?.[0]);
     });
   }, []);
   if (fetching) {
@@ -37,11 +37,10 @@ export default function RandomDrink() {
       </div>
     );
   }
-
   return (
     <div>
       <div>
-        <DrinkDetail drink={randomDrink} />
+        <MealDetail meal={RandomMeal} />
       </div>
     </div>
   );

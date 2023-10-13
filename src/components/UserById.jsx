@@ -7,6 +7,7 @@ export default function UserById() {
   const { userId } = useParams();
   let [user, setUser] = React.useState({});
   useEffect(() => {
+    document.title = "UserById";
     getUserById(userId).then((res) => {
       setUser(res?.data);
     });

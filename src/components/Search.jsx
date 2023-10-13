@@ -11,7 +11,7 @@ export default function Search({ onClickSearchButton }) {
     <div className="flex items-center  flex-row-reverse">
       <div
         onClick={handleSearch}
-        className="hover:opacity-60 cursor-pointer rounded-r-md p-2.5 bg-blue-400  border-[1px] border-blue-300"
+        className="hover:opacity-60 cursor-pointer rounded-r-md p-2 bg-blue-400  border-[1px] border-blue-300"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -32,9 +32,8 @@ export default function Search({ onClickSearchButton }) {
         onChange={handleSearch}
         placeholder="Search By Name"
         ref={inputRef}
-        className=" rounded-l-md rounded-r-md w-full outline-none p-2 border-[1px] border-blue-300 text-blue-300"
+        className=" rounded-l-md  w-full outline-none p-2 border-[1px] border-blue-300 text-blue-300"
       />
     </div>
   );
 }
-

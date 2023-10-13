@@ -1,10 +1,10 @@
 import React from "react";
 import ReactPlayer from "react-player";
 
-export default function DrinkDetail({ drink }) {
+export default function MealDetail({ meal }) {
   return (
     <div>
-      <div className={"flex flex-col gap-3 max-w-lg m-auto"}>
+      <div className={"flex flex-col gap-3 max-w-2xl m-auto"}>
         <div
           className="cursor-pointer"
           onClick={() => {
@@ -27,32 +27,30 @@ export default function DrinkDetail({ drink }) {
           </svg>
         </div>
         <div className={"flex gap-2 items-center"}>
-          <span className={"text-2xl"}>{drink?.strDrink}</span>
+          <span className={"text-2xl"}>{meal?.strMeal}</span>
           <div
             className={
               "text-red-400 text-[10px] p-1 border-red-400 border-[0.5px] rounded-xl"
             }
           >
-            {drink?.strCategory}
+            {meal?.strCategory}
           </div>
         </div>
-        {drink?.strVideo ? (
-          <ReactPlayer width={"100%"} height={"300"} url={drink?.strVideo} />
+        {meal?.strYoutube ? (
+          <ReactPlayer width={"100%"} height={"300"} url={meal?.strYoutube} />
         ) : (
           <img
             alt=""
             className={
               "shadow-blue-500/80 object-cover self-center rounded-lg shadow-lg h-60"
             }
-            src={drink?.strDrinkThumb}
+            src={meal?.strMealThumb}
           />
         )}
-        <span className={"text-gray-500 text-sm"}>
-          {drink?.strInstructions}
-        </span>
+        <span className={"text-gray-500 text-sm"}>{meal?.strInstructions}</span>
         <div>
-          <h4 className="font-semibold">Glass</h4>
-          <span>{drink?.strGlass}</span>
+          <h3 className="font-bold">Area</h3>
+          <span>{meal?.strArea}</span>
         </div>
         <div className={"flex justify-between items-center"}>
           <span className="font-bold">Ingredients</span>
@@ -60,18 +58,18 @@ export default function DrinkDetail({ drink }) {
         </div>
         {Array.from({ length: 15 }).map((item, index) => {
           if (
-            !drink?.[`strMeasure${index + 1}`] &&
-            !drink?.[`strIngredient${index + 1}`]
+            !meal?.[`strMeasure${index + 1}`] &&
+            !meal?.[`strIngredient${index + 1}`]
           ) {
             return "";
           }
           return (
             <div key={index} className={"flex justify-between items-center"}>
               <span className="font-200">
-                {drink?.[`strIngredient${index + 1}`]}
+                {meal?.[`strIngredient${index + 1}`]}
               </span>
               <span className="font-200">
-                {drink?.[`strMeasure${index + 1}`]}
+                {meal?.[`strMeasure${index + 1}`]}
               </span>
             </div>
           );

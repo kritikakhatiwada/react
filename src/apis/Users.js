@@ -17,6 +17,7 @@ export function getUserById(userId) {
   return new Promise((resolve, reject) => {
     axios
       .get(`https://reqres.in/api/users/${userId}`)
+   
       .then((res) => {
         resolve(res.data);
       })

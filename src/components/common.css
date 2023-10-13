@@ -3,49 +3,20 @@
   background-color: rgb(138, 245, 247);
   border-radius: 28px;
 }
-
-/* .country-card {
-  padding: 10px 0px;
-} */
-
 .CountriesWrapper {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-
-  /* margin-top: 50px; */
 }
-
-.headerWrapper {
-  display: flex;
-  gap: 40px;
-
-  /* height: 70px; */
-  padding: 20px;
-  background-color: rgb(1, 61, 61);
-  position: sticky;
-  top: 0;
-}
-.headerWrapper a:hover {
+a:hover {
   color: brown;
-  font-size: 28px;
-  font-weight: 700;
+  /* font-size: 28px;
+  font-weight: 700; */
 }
 a {
-  text-decoration: none;
   font-size: 24px;
-  color: white;
-  font-weight: 400;
+  font-weight: 500;
 }
 
-/* .grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 16px;
-  margin-top: 40px;
-  border: 3px solid;
-  border: 3px solid black;
-  padding: 3px;
-} */
 .search {
-  margin-top: 30px;
+  margin-top: 4px;
 }

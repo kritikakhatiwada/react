@@ -1,11 +1,11 @@
 import React from "react";
 
-export default function Drinkcard({ drink }) {
+export default function Mealcard({ meal }) {
   return (
     <div>
-      <img className="rounded-t-xl" src={drink?.strDrinkThumb} alt="" />
+      <img className="rounded-t-xl" src={meal?.strMealThumb} alt="" />
       <span className="p-3 text-[12px] flex items-center font-Croissant One">
-        {drink?.strDrink}
+        {meal?.strMeal}
       </span>
     </div>
   );
